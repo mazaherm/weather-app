@@ -6,7 +6,8 @@
   "author": "Mazaher Muraj",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback --inline --progress"
+    "start": "webpack-dev-server --history-api-fallback --inline --progress",
+    "lint": "eslint src/**/*.js"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -16,6 +17,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
@@ -30,6 +32,12 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.6.3",
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
