@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --inline --progress",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -20,6 +21,7 @@
     "eslint": "^6.6.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "node-sass": "^4.12.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
