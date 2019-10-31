@@ -5,7 +5,7 @@ import WeatherCard from './components/organisms/WeatherCard/WeatherCard'
 import '../style/main.scss'
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <>
         <h1>This is a react app</h1>
