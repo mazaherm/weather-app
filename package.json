@@ -8,7 +8,13 @@
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback --inline --progress",
     "lint": "eslint src/**/*.js",
-    "test": "jest"
+    "test": "cross-env CI=true jest --env=jsdom"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn test",
+      "pre-push": "yarn lint && yarn test"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -19,10 +25,12 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-preset-env": "^1.7.0",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "eslint": "^6.6.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.9",
     "jest": "^24.9.0",
     "node-sass": "^4.12.0",
     "react": "^16.11.0",
