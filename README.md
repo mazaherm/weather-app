@@ -20,6 +20,9 @@ const URL = const API_KEY = config.API_KEY
 5. Save and in the terminal run `yarn install`
 6. Then run `yarn start` and go to `http://localhost:8080/` in your browser
 
+## The Weather App
+![alt text](https://github.com/mazaherm/weather-app/blob/chore/add-screenshot/src/app/assets/screenshot/ReactWeatherApp.png)
+
 ## Technologies used
 - HTML/CSS (using sass)
 - React
