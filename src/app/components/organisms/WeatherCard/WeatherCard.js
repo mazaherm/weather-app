@@ -3,6 +3,7 @@ import moment from 'moment'
 import CallWeatherAPI from '../../../services/CallWeatherAPI'
 
 import Paragraph from '../../atoms/Paragraph'
+import Image from '../../atoms/Image'
 
 import './WeatherCard.scss'
 
@@ -37,10 +38,10 @@ export default class WeatherCard extends Component {
         {
           this.state.isLoading ? <p>Loading...</p> :
           <div className='weather-card'>
-            <p>{this.state.city}</p>
+            <h2>{this.state.city}</h2>
             <Paragraph>{this.state.description}</Paragraph>
             <Paragraph>{moment(this.state.date * 1000).format("MMM Do YYYY")}</Paragraph>
-            <img src={this.state.icon} />
+            <Image src={this.state.icon} alt='todays weather' />
             <Paragraph>{Math.round(this.state.temperature)}<span>&#176; C</span></Paragraph>
           </div>
         }
