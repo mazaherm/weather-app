@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import WeatherCard from './components/organisms/WeatherCard/WeatherCard'
+import Heading from './components/atoms/Heading'
 
 import '../style/main.scss'
 
@@ -8,7 +9,7 @@ class App extends Component {
   render () {
     return (
       <>
-        <h1>This is a react app</h1>
+        <Heading size={1} align='center'>React Weather App</Heading>
         <WeatherCard />
       </>
     )
