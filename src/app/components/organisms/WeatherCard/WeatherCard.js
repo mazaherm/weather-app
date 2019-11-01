@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import CallWeatherAPI from '../../../services/CallWeatherAPI'
 
+import Heading from '../../atoms/Heading'
+import Paragraph from '../../atoms/Paragraph'
+import Image from '../../atoms/Image'
+
 import './WeatherCard.scss'
 
 export default class WeatherCard extends Component {
@@ -35,11 +39,11 @@ export default class WeatherCard extends Component {
         {
           this.state.isLoading ? <p>Loading...</p> :
           <div className='weather-card'>
-            <p>{this.state.city}</p>
-            <p>{this.state.description}</p>
-            <p>{moment(this.state.date * 1000).format("MMM Do YYYY")}</p>
-            <img src={this.state.icon} />
-            <p>{Math.round(this.state.temperature)}<span>&#176; C</span></p>
+            <Heading size={2}>{this.state.city}</Heading>
+            <Paragraph>{this.state.description}</Paragraph>
+            <Paragraph>{moment(this.state.date * 1000).format("MMM Do YYYY")}</Paragraph>
+            <Image src={this.state.icon} alt='todays weather' />
+            <Paragraph>{Math.round(this.state.temperature)}<span>&#176; C</span></Paragraph>
           </div>
         }
       </>
