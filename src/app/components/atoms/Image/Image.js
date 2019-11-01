@@ -5,7 +5,8 @@ const Image = ({
   alt,
   src,
   height,
-  width
+  width,
+  styles
 }) => {
   return (
     <img 
@@ -13,6 +14,7 @@ const Image = ({
       src={src}
       height={height}
       width={width}
+      className={styles}
     />
   )
 }
@@ -25,7 +27,9 @@ Image.propTypes = {
   /** Specifies the height of an image */
   height: PropTypes.string,
   /** Specifies the width of an image */
-  width: PropTypes.string
+  width: PropTypes.string,
+  /** Adds custom styles to component */
+  styles: PropTypes.string
 }
 
 export default Image
