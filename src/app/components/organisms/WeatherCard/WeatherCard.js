@@ -5,6 +5,7 @@ import CallWeatherAPI from '../../../services/CallWeatherAPI'
 import Heading from '../../atoms/Heading'
 import Paragraph from '../../atoms/Paragraph'
 import Image from '../../atoms/Image'
+import Loading from '../../atoms/Loading'
 import Grid from '../../layout/Grid'
 
 import './WeatherCard.scss'
@@ -38,7 +39,7 @@ export default class WeatherCard extends Component {
     return (
       <>
         {
-          this.state.isLoading ? <p>Loading...</p> :
+          this.state.isLoading ? <Loading /> :
           <Grid styles='weather-card'>
             <Grid styles='wc-top'> 
               <Grid>
