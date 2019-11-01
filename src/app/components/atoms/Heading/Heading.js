@@ -10,7 +10,7 @@ const Heading = ({
   const Tag = `h${size}`
   if (size > 6) return null
   return (
-    <Tag class={styles} align={align}>{children}</Tag>
+    <Tag className={styles} align={align}>{children}</Tag>
   )
 }
 
