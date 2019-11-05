@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import CallWeatherAPI from '../../../services/CallWeatherAPI'
 
 import Loading from '../../atoms/Loading'
+import Button from '../../atoms/Button'
+import Grid from '../../layout/Grid'
 import MainWeatherCardContent from '../../molecules/MainWeatherContent'
 import ExtraWeatherCardContent from '../../molecules/ExtraWeatherContent'
 
@@ -19,7 +21,8 @@ export default class WeatherCard extends Component {
     sunrise: null,
     sunset: null,
     date: null,
-    isLoading: true
+    isLoading: true,
+    extraIsDisplayed: false
   }
 
   componentDidMount () {
@@ -42,15 +45,32 @@ export default class WeatherCard extends Component {
     getData()
   }
 
+    handleClick () {
+      this.setState(
+        prevState => ({
+          extraIsDisplayed: !prevState.extraIsDisplayed
+        })
+      )
+    }
+
   render () {
     return (
       <>
         {
           this.state.isLoading ? <Loading /> :
-          <>
+          <Grid styles='weather-card'>
             <MainWeatherCardContent data={this.state}/>
-            <ExtraWeatherCardContent data={this.state} />
-          </>
+            <Button 
+              onClick={() => this.handleClick()}
+              styles='wc-button'
+            >
+                {!this.state.extraIsDisplayed ? 'More' : 'Less'}
+            </Button>
+            {
+              !this.state.extraIsDisplayed ? null :
+              <ExtraWeatherCardContent data={this.state} />
+            }
+          </Grid>
         }
       </>
     )
