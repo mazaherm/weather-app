@@ -1,0 +1,19 @@
+.weather-card {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .wc-button {
+    background-color: #7ed6df;
+    border: 1px solid #22a6b3;
+    border-radius: 3px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    outline: none;
+    color: #f3f3f3;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 15px auto;
+  }
+}

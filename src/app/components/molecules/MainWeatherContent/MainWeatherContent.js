@@ -21,7 +21,7 @@ export default class MainWeatherContent extends Component {
   render () {
     const { data } = this.props
     return (
-      <Grid styles='weather-card'>
+      <Grid styles='weather-card-main'>
         <Grid styles='wc-top'>
           <Grid>
             <Heading styles='wc-heading' size={2}>{data.city}</Heading>

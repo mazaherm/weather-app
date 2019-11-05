@@ -16,7 +16,7 @@ const Heading = ({
 
 Heading.propTypes = {
   /** Used for content that will be shown inside the component */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   /** Selects the desired \<h\> element to use */
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
   /** Aligns the text within the heading */
