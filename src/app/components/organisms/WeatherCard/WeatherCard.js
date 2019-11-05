@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, { lazy, Suspense, Component } from 'react'
 import CallWeatherAPI from '../../../services/CallWeatherAPI'
 
 import Loading from '../../atoms/Loading'
 import Button from '../../atoms/Button'
 import Grid from '../../layout/Grid'
 import MainWeatherCardContent from '../../molecules/MainWeatherContent'
-import ExtraWeatherCardContent from '../../molecules/ExtraWeatherContent'
 
 import './WeatherCard.scss'
 
@@ -54,6 +53,7 @@ export default class WeatherCard extends Component {
     }
 
   render () {
+    const ExtraWeatherCardContent = lazy(() => import('../../molecules/ExtraWeatherContent'))
     return (
       <>
         {
@@ -68,7 +68,9 @@ export default class WeatherCard extends Component {
             </Button>
             {
               !this.state.extraIsDisplayed ? null :
-              <ExtraWeatherCardContent data={this.state} />
+              <Suspense fallback={<Loading />}>
+                <ExtraWeatherCardContent data={this.state} />
+              </Suspense>
             }
           </Grid>
         }
