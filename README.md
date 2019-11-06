@@ -21,7 +21,7 @@ const URL = const API_KEY = config.API_KEY
 6. Then run `yarn start` and go to `http://localhost:8080/` in your browser
 
 ## The Weather App
-![alt text](https://github.com/mazaherm/weather-app/blob/chore/add-screenshot/src/app/assets/screenshot/3ffe9o.gif)
+![Weather App](https://github.com/mazaherm/weather-app/blob/master/src/app/assets/screenshot/3ffe9o.gif)
 
 ## Technologies used
 - HTML/CSS (using sass)
