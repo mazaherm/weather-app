@@ -9,6 +9,11 @@ import MainWeatherCardContent from '../../molecules/MainWeatherContent'
 import './WeatherCard.scss'
 
 export default class WeatherCard extends Component {
+  constructor(props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
+  }
+  
   state = {
     city: null,
     description: null,
@@ -24,24 +29,21 @@ export default class WeatherCard extends Component {
     extraIsDisplayed: false
   }
 
-  componentDidMount () {
-    const getData = async () => {
-      const data = await CallWeatherAPI()
-      this.setState({
-        city: data.city.name,
-        description: data.list[0].weather[0].description,
-        icon: `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`,
-        temperature: data.list[0].main.temp,
-        minTemp: data.list[0].main.temp_min,
-        maxTemp: data.list[0].main.temp_max,
-        windSpeed: data.list[0].wind.speed,
-        sunrise: data.city.sunrise,
-        sunset: data.city.sunset,
-        date: data.list[0].dt,
-        isLoading: false
-      })
-    }
-    getData()
+  async componentDidMount () {
+    const data = await CallWeatherAPI()
+    this.setState({
+      city: data.city.name,
+      description: data.list[0].weather[0].description,
+      icon: `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`,
+      temperature: data.list[0].main.temp,
+      minTemp: data.list[0].main.temp_min,
+      maxTemp: data.list[0].main.temp_max,
+      windSpeed: data.list[0].wind.speed,
+      sunrise: data.city.sunrise,
+      sunset: data.city.sunset,
+      date: data.list[0].dt,
+      isLoading: false
+    })
   }
 
     handleClick () {
@@ -61,7 +63,7 @@ export default class WeatherCard extends Component {
           <Grid styles='weather-card'>
             <MainWeatherCardContent data={this.state}/>
             <Button 
-              onClick={() => this.handleClick()}
+              onClick={this.handleClick}
               styles='wc-button'
             >
                 {!this.state.extraIsDisplayed ? 'More' : 'Less'}
