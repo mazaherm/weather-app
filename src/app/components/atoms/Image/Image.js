@@ -23,13 +23,17 @@ Image.propTypes = {
   /** Specifies an alternate text for an image */
   alt: PropTypes.string.isRequired,
   /** Specifies the URL of an image */
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   /** Specifies the height of an image */
   height: PropTypes.string,
   /** Specifies the width of an image */
   width: PropTypes.string,
   /** Adds custom styles to component */
   styles: PropTypes.string
+}
+
+Image.defaultProps = {
+  src: ''
 }
 
 export default Image
