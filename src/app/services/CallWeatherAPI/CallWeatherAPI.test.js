@@ -1,6 +1,6 @@
 import mockAxios from 'axios'
 import CallWeatherAPI from './CallWeatherAPI'
-import config from '../../config'
+import config from '../../config.js'
 
 describe('CallWeatherAPI', () => {
   it('calls axios and returns data', async () => {
