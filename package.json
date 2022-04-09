@@ -58,6 +58,6 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-standard": "^4.0.1",
     "identity-obj-proxy": "^3.0.0",
-    "moment": "^2.24.0"
+    "moment": "^2.29.2"
   }
 }
